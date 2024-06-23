@@ -47,3 +47,7 @@ body {
   top: 10px;
   left: 10px;
 }
+
+.sl-wrapper {
+  background: rgba(46, 47, 66, 0.8);
+}
