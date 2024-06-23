@@ -6,9 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2-form</title>
+  
+  
+  <script type="module" crossorigin src="/goit-js-hw-09/commonHelpers2.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-09/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="stylesheet" href="/goit-js-hw-09/assets/2-form-5c6d0b5f.css">
 </head>
 
 <body>
+  <a href="./index.html" class="home-link">Go Home</a>
+  <form class="feedback-form" autocomplete="off">
+    <label class="label-text">
+      Email
+      <input type="email" name="email" class="input-email" autofocus />
+    </label>
+    <label class="label-text ">
+      Message
+      <textarea name="message" rows="8" class="text-message"></textarea>
+    </label>
+    <button type="submit" class="button-submit">Submit</button>
+  </form>
 
 </body>
 
