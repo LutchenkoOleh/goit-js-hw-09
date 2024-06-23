@@ -1,3 +1,6 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 const images = [
   {
     preview:
@@ -84,13 +87,15 @@ const gallery = document.querySelector(".gallery");
 
 gallery.insertAdjacentHTML('afterbegin', createMarkup(images));
 
-gallery.addEventListener('click', handlerGetImage);
 
-function handlerGetImage(evt) {
-  evt.preventDefault();
-  if (evt.target.classList.contains('gallery-image')) {
-    const largeImg = evt.target.getAttribute('data-source');
-    console.log(largeImg);
-  }
-}
+let galleryShow = new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionType: 'attr',
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
+});
+galleryShow.on('show.simplelightbox', function () {
+
+});
 
