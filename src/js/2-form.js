@@ -20,6 +20,7 @@ function handlerForm(evt) {
     alert("Fill please all fields")
   } else {
     console.log(formData)
+    form.reset();
   }
 }
 
@@ -38,7 +39,7 @@ if (saveData) {
 localStorage.removeItem("feedback-form-state");
 formData.email = "";
 formData.message = "";
-form.reset();
+
 
 
 
