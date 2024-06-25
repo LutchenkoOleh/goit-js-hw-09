@@ -5,23 +5,15 @@ const formData = {
 
 
 const form = document.querySelector('.feedback-form');
-form.addEventListener('submit', handlerForm);
+form.addEventListener('input', handlerForm);
 
 function handlerForm(evt) {
-  evt.preventDefault();
   const { email, message } = evt.currentTarget.elements;
 
   formData.email = email.value;
   formData.message = message.value;
 
   localStorage.setItem("feedback-form-state", JSON.stringify(formData));
-
-  if (!formData.email || !formData.message) {
-    alert("Fill please all fields")
-  } else {
-    console.log(formData)
-    form.reset();
-  }
 }
 
 const saveData = localStorage.getItem("feedback-form-state");
@@ -35,14 +27,19 @@ if (saveData) {
   document.querySelector('textarea[name="message"]').value = formData.message;
 }
 
+form.addEventListener('submit', handlerFormSubmit)
 
-localStorage.removeItem("feedback-form-state");
-formData.email = "";
-formData.message = "";
+function handlerFormSubmit(e) {
+  e.preventDefault();
 
-
-
-
+  if (!formData.email || !formData.message) {
+    alert("Fill please all fields")
+  } else {
+    console.log(formData)
+    form.reset();
+    localStorage.removeItem('feedback-form-state');
+  }
+}
 
 
 
